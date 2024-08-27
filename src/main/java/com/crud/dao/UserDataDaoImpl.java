@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.crud.beans.UserDataBean;
 import com.crud.entities.UserDataEntity;
 
-
+@Transactional
 @Repository("userDataDao")
 public class UserDataDaoImpl implements UserDataDao{
 	
@@ -18,7 +18,6 @@ public class UserDataDaoImpl implements UserDataDao{
 	SessionFactory sessionFactory;
 
 	@Override
-	@Transactional
 	public void saveDetails(UserDataBean userDataBean) {
 		System.out.println("start of saveDetails");
 		Session session = null;
